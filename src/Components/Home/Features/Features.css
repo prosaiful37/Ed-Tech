@@ -1,0 +1,17 @@
+.features-title{
+    color: #FF6652;
+    text-decoration: underline;
+}
+.iconss{
+    width: 70px;
+    height: 70px;
+    /* background-color: #245D51; */
+    
+    
+}
+.iconbox{
+    background-color: rgb(236, 232, 232);
+}
+.iconbox:hover{
+    background-color: white;
+}
