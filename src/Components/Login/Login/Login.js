@@ -3,7 +3,7 @@ import React, { useRef } from "react";
 import Loading from "../../Shared/Loading/Loading";
 import { Button, Form } from "react-bootstrap";
 import auth from "../../../firebase.init";
-import { Navigate, useLocation, useNavigate } from "react-router-dom";
+import {  useLocation, useNavigate } from "react-router-dom";
 import SocialLogin from "../SocialLogin/SocialLogin";
 
 const Login = () => {
@@ -65,7 +65,7 @@ const Login = () => {
 
   // redirect register page for new account
   const navigateRegister = () => {
-    navigate("/register");
+    navigate("/signup");
   };
   return (
     <div className="container ">
