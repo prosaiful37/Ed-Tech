@@ -4,9 +4,18 @@ import ownerImg from "../../../Images/Courses/icons8-user-30.png";
 import lessionImg from "../../../Images/Courses/c-meta-01.png";
 import studentImg from "../../../Images/Courses/c-meta-02.png";
 import review from "../../../Images/Courses/c-meta-03.png";
+import { useNavigate } from 'react-router-dom';
 
 const ServicesCourse = ({course}) => {
     const {img, title, lession, student, category, subCategory, price} = course;
+    const navigate = useNavigate();
+
+
+    // redirect register page for new account
+    const navigateToServices = () => {
+        navigate("/services");
+    };
+
     return (
         <Col>
             <Card className='mb-5'>
@@ -39,7 +48,7 @@ const ServicesCourse = ({course}) => {
             </Card.Body>
             <Card.Footer>
             <div className='d-flex justify-content-between'>
-                <Button variant="danger">ENROLL NOW</Button>
+                <Button onClick={navigateToServices} variant="danger">ENROLL NOW</Button>
                 <h6 className='fw-bold'>Price: ${price}</h6>
             </div>
             </Card.Footer>

@@ -1,35 +1,40 @@
-import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import React, { useRef } from "react";
 import Loading from "../../Shared/Loading/Loading";
 import { Button, Form } from "react-bootstrap";
 import auth from "../../../firebase.init";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Navigate, useLocation, useNavigate } from "react-router-dom";
+import SocialLogin from "../SocialLogin/SocialLogin";
 
 const Login = () => {
     const navigate = useNavigate();
+    const location = useLocation();
   // input field useRef
   const emailRef = useRef("");
   const passwordRef = useRef("");
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
-  if (error) {
+
+  const [sendPasswordResetEmail, sending, error1] = useSendPasswordResetEmail(
+    auth
+  );
+
+  let from = location.state?.from?.pathname || "/";
+
+  if (error || error1) {
     return (
       <div>
         <p>Error: {error.message}</p>
       </div>
     );
   }
-  
-  if (loading) {
-    return <Loading></Loading>;
-  }
 
   if (user) {
-    return (
-      <div>
-        <p>Signed In User: {user.email}</p>
-      </div>
-    );
+    navigate(from, { replace: true });
+  }
+
+  if (loading) {
+    return <Loading></Loading>;
   }
 
   // form submit
@@ -41,11 +46,27 @@ const Login = () => {
 
     signInWithEmailAndPassword(email, password);
   };
-  // redirect register page for new account
-  const navigateRegister = () => {
-    navigate("/signup");
+
+  // handle reset password
+  const handleResetPassword = async () => {
+    const email = emailRef.current.value;
+    await sendPasswordResetEmail(email);
+
+    if (email) {
+      await sendPasswordResetEmail(email);
+      alert("Check Your Email");
+    } else {
+      alert("Please Give Your Email");
+    }
+
+
+    
   };
 
+  // redirect register page for new account
+  const navigateRegister = () => {
+    navigate("/register");
+  };
   return (
     <div className="container ">
       <h3 className="text-center mt-3 w-100">LogIn to Continue</h3>
@@ -75,7 +96,7 @@ const Login = () => {
           LOG IN
         </Button>
 
-        <p className="mt-3">
+        <p onClick={handleResetPassword}  className="mt-3">
           Reset Password{" "}
           <span className="text-primary" style={{ cursor: "pointer" }}>
             Forgot Password
@@ -88,10 +109,11 @@ const Login = () => {
             SIGN UP
           </span>
         </p>
-      </Form>
-      <div className="containr w-50 mx-auto">
-        {/* <SocialLogin></SocialLogin> */}
+        <div className="containr w-50 mx-auto">
+        <SocialLogin></SocialLogin>
       </div>
+      </Form>
+      
     </div>
   );
 };
