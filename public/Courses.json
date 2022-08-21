@@ -1,71 +1,61 @@
 [
+
+
     {
-        "img": "",
-        "profile" : "",
+        "img": "https://i.ibb.co/ZJvLh6G/course-10.jpg",
         "title" : "course-avata How to Write Great Web Content – Better Search!",
         "lession" : "91",
         "student" : "25",
-        "ratting" : "",
         "category" : "Design",
         "subCategory" : "Marketing",
         "price" : "15.00"
 
     },
     {
-        "img": "",
-        "profile" : "",
+        "img": "https://i.ibb.co/4PH1K2Y/course-9.jpg",
         "title" : "Course avata Dreamweaver – Coding your first website using",
         "lession" : "91",
         "student" : "25",
-        "ratting" : "",
         "category" : "Coding",
         "subCategory" : "Design",
         "price" : "35.00"
 
     },
     {
-        "img": "",
-        "profile" : "",
+        "img": "https://i.ibb.co/DGrjGQk/course-7.jpg",
         "title" : "Course-avata Complete Web Design from Figma Freelancing",
         "lession" : "91",
         "student" : "25",
-        "ratting" : "",
         "category" : "Content Writing",
         "subCategory" : "Design",
         "price" : "39.00"
 
     },
     {
-        "img": "",
-        "profile" : "",
+        "img": "https://i.ibb.co/55YxTVs/course-11.jpg",
         "title" : "SEO: Structured Data Markup for Web Masters",
         "lession" : "91",
         "student" : "25",
-        "ratting" : "",
         "category" : "Design",
         "subCategory" : "Marketing",
         "price" : "42.00"
 
     },
     {
-        "img": "",
-        "profile" : "",
+        "img": "https://i.ibb.co/myvQmPb/course-6.jpg",
         "title" : "Complete Web Design from Figma to Webflow",
         "lession" : "91",
         "student" : "25",
-        "ratting" : "",
         "category" : "Marketing",
         "subCategory" : "Search Engine",
         "price" : "31.00"
 
     },
     {
-        "img": "",
-        "profile" : "",
+        "img": "https://i.ibb.co/M6cCVP2/course-3.jpg",
         "title" : "The Complete 2022 Web Development Camp",
         "lession" : "91",
         "student" : "25",
-        "ratting" : "",
         "category" : "Design",
         "subCategory" : "Development",
         "price" : "25.00"

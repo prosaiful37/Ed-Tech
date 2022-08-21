@@ -8,7 +8,7 @@ import Header from "./Components/Shared/Header/Header";
 import Footer from "./Components/Shared/Footer/Footer";
 import Courses from "./Components/Courses/Courses";
 import Login from "./Components/Login/Login/Login";
-import { Button } from 'react-bootstrap';
+import Signup from './Components/Login/Register/Signup';
 
 function App() {
   return (
@@ -20,6 +20,7 @@ function App() {
           <Route path="/courses" element={<Courses></Courses>}></Route>
           <Route path="/blog" element={<Blogs></Blogs>}></Route>
           <Route path="/login" element={<Login></Login>}></Route>
+          <Route path="/signup" element={<Signup></Signup>}></Route>
       </Routes>
 
      <Footer></Footer>
